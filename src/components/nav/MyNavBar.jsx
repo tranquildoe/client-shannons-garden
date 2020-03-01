@@ -22,12 +22,12 @@ export default class MyNavBar extends Component {
                 {/* <NavLink to="/random-beer" >Random Beer</NavLink>
                 <NavLink to="/new-beer" >New Beer</NavLink> */}
                 {/* Want the dropdown title to be a navLink as well:  */}
-                <NavDropdown title="My Dashboard" id="basic-nav-dropdown">
+                <NavDropdown className="navDrop" title="My Dashboard" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/myseedlist">My Seed List</NavDropdown.Item>
                     <NavDropdown.Item href="/mywishlist">My Wish List</NavDropdown.Item>
                 </NavDropdown>
 
-                <NavDropdown title="Home" id="basic-nav-dropdown">
+                <NavDropdown className="navDrop" title="Home" id="basic-nav-dropdown">
 
                 {/* add an anchor to the search on the start page:  */}
                     <NavDropdown.Item href="/">Search</NavDropdown.Item>

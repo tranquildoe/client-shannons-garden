@@ -1,3 +1,11 @@
 .navLink {
-    color: lightgray;
+    color: rgba(211, 211, 211, 0.726);
 }
+
+.navLink:active {
+    color: white;
+}
+
+/* .navDrop {
+    color: lightgrey;
+} */

@@ -5,10 +5,10 @@
 }
 
 .aboutMe {
-    border: 2px solid darkslategray;
+    border: 1.5px solid darkslategray;
     width: 70vw;
-    margin-top: 5vw;
+    margin-top: 6.5vw;
     text-align: left;
     min-height: 30vw;
-
+    padding-left: 1.5vw;
 }

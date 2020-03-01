@@ -6,7 +6,7 @@ import "./App.css";
 
 import { Switch, Route } from "react-router-dom";
 
-// import AllBeers from "./components/AllBeers"
+import MyDashboard from "./components/MyDashboard";
 // import RandomBeer from "./components/RandomBeer"
 // import NewBeer from "./components/NewBeer"
 // need to import css for AllBeers here:
@@ -34,6 +34,7 @@ class App extends Component {
         {/* <Route exact path="/beers" render={props => (<AllBeers {...props} allBeers={this.state.allBeers} />
         )} */}
         {/* <Route path="/home" component= {AllBeers} /> */}
+        <Route path="/mydashboard" component= {MyDashboard} />
         {/* // component={AllBeers} */}
          {/* />
         <Route path="/random-beer" component={RandomBeer} />

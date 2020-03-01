@@ -5,6 +5,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Nav from "react-bootstrap/Nav";
 import { NavLink } from 'react-router-dom'
 import "bootstrap/dist/css/bootstrap.min.css";
+
 // import Form from "react-bootstrap/Form"
 // import FormControl from "react-bootstrap/FormControl"
 // import Button from "react-bootstrap/Button"
@@ -22,28 +23,18 @@ export default class MyNavBar extends Component {
                 <NavLink to="/new-beer" >New Beer</NavLink> */}
                 {/* Want the dropdown title to be a navLink as well:  */}
                 <NavDropdown title="My Dashboard" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Test 1 - My Seed List</NavDropdown.Item>
-                    <NavLink to="/myseedlist" >Test 2 - My Seed List</NavLink>
-
-                    <NavDropdown.Item>
-                        <NavLink to="/myseedlist" >Test 3 - My Seed List</NavLink>
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">gg link</NavDropdown.Item>
+                    <NavDropdown.Item href="/myseedlist">My Seed List</NavDropdown.Item>
+                    <NavDropdown.Item href="/mywishlist">My Wish List</NavDropdown.Item>
                 </NavDropdown>
 
-                <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">
-                        Another action
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">gg link</NavDropdown.Item>
+                <NavDropdown title="Home" id="basic-nav-dropdown">
+
+                {/* add an anchor to the search on the start page:  */}
+                    <NavDropdown.Item href="/">Search</NavDropdown.Item>
+                    <NavDropdown.Item href="/about">About</NavDropdown.Item>
                 </NavDropdown>
-                {/* <NavLink 
-                to="/random-beer" >Random Beer</NavLink> */}
+
+                <NavLink className="navLink" to="/logout" >Logout</NavLink>
 
             </Nav>
                   {/* <Form inline>

@@ -7,6 +7,8 @@ import "./App.css";
 import { Switch, Route } from "react-router-dom";
 
 import MyDashboard from "./components/MyDashboard";
+import MyNavBar from "./components/nav/MyNavBar";
+import "./styles/MyNavBar.css";
 // import RandomBeer from "./components/RandomBeer"
 // import NewBeer from "./components/NewBeer"
 // need to import css for AllBeers here:
@@ -19,8 +21,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>hi</div>
-        {/* <NavBar /> */}
+        {/* <div>hi</div> */}
+        <MyNavBar></MyNavBar>
         {/* <img className="picture" src="./images/bottleCaps.jpg" alt="beer bottlecaps"/> */}
        
 

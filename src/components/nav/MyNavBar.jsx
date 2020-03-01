@@ -42,7 +42,8 @@ export default class MyNavBar extends Component {
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action/3.4">gg link</NavDropdown.Item>
                 </NavDropdown>
-                <NavLink to="/random-beer" >Random Beer</NavLink>
+                {/* <NavLink 
+                to="/random-beer" >Random Beer</NavLink> */}
 
             </Nav>
                   {/* <Form inline>

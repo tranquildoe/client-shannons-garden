@@ -3,17 +3,32 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "clean-css": ">=4.1.11",
+    "constantinople": ">=3.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
-    "constantinople": ">=3.1.1",
-    "clean-css": ">=4.1.11",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.0"
   },
   "scripts": {
     "start": "react-scripts start"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

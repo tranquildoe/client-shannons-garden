@@ -1,0 +1,21 @@
+.topTwoRows {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 15vw);
+    /* grid-gap: 10px; */
+    margin-top: 30vw;
+    border: 1px solid darkslategray;
+    min-width: 60vw;
+    max-width: 80vw;
+
+  }
+
+.item {
+    border: 1px solid darkslategray;
+    padding: 2vw;
+    width: 1fr;
+}
+
+/* div {
+    display: grid;
+} */

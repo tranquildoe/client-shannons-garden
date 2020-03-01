@@ -8,7 +8,9 @@ import { Switch, Route } from "react-router-dom";
 
 import MyDashboard from "./components/MyDashboard";
 import MyNavBar from "./components/nav/MyNavBar";
+import MySeedList from "./components/mySeedList/MySeedList"
 import "./styles/MyNavBar.css";
+import "./styles/BtnMySeedList.css"
 // import "./styles/MyDashboard.css"
 // import RandomBeer from "./components/RandomBeer"
 // import NewBeer from "./components/NewBeer"
@@ -36,7 +38,7 @@ class App extends Component {
         
         {/* <Route exact path="/beers" render={props => (<AllBeers {...props} allBeers={this.state.allBeers} />
         )} */}
-        {/* <Route path="/home" component= {AllBeers} /> */}
+        <Route path="/myseedlist" component= {MySeedList} />
         <Route path="/mydashboard" component= {MyDashboard} />
         {/* // component={AllBeers} */}
          {/* />

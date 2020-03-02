@@ -6,7 +6,7 @@ import "./App.css";
 
 import { Switch, Route } from "react-router-dom";
 
-import MyDashboard from "./components/MyDashboard";
+import MyDashboard from "./components/userDashboard/MyDashboard"
 import MyNavBar from "./components/nav/MyNavBar";
 import MySeedList from "./components/mySeedList/MySeedList";
 import About from "./components/aboutPage/About";

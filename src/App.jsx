@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import "./App.css";
 
 // import "bootstrap/dist/css/bootstrap.min.css";
-// import NavBar from "./components/NavBar";
 
 import { Switch, Route } from "react-router-dom";
 
 import MyDashboard from "./components/userDashboard/MyDashboard"
-import MyNavBar from "./components/nav/MyNavBar";
+import MyNavBar from "./components/navDropDownMenu/MyNavBar";
 import MySeedList from "./components/mySeedList/MySeedList";
 import About from "./components/aboutPage/About";
 import "./styles/MyNavBar.css";

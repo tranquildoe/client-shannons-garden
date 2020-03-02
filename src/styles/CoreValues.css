@@ -1,0 +1,12 @@
+.titleCoreValues {
+    font-size: 6vw;
+    margin-top: 6vw;
+    margin-bottom: 3vw;
+    text-decoration: underline; 
+}
+
+.coreValues {
+    font-size: 6vw;
+    text-decoration: none;
+    margin-bottom: 6vw;
+}

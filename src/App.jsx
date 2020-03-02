@@ -8,9 +8,11 @@ import { Switch, Route } from "react-router-dom";
 
 import MyDashboard from "./components/MyDashboard";
 import MyNavBar from "./components/nav/MyNavBar";
-import MySeedList from "./components/mySeedList/MySeedList"
+import MySeedList from "./components/mySeedList/MySeedList";
+import About from "./components/aboutPage/About";
 import "./styles/MyNavBar.css";
-import "./styles/BtnMySeedList.css"
+import "./styles/BtnMySeedList.css";
+import "./styles/About.css";
 // import "./styles/MyDashboard.css"
 // import RandomBeer from "./components/RandomBeer"
 // import NewBeer from "./components/NewBeer"
@@ -40,9 +42,10 @@ class App extends Component {
         )} */}
         <Route path="/myseedlist" component= {MySeedList} />
         <Route path="/mydashboard" component= {MyDashboard} />
+        <Route path="/about" component={About} />
         {/* // component={AllBeers} */}
          {/* />
-        <Route path="/random-beer" component={RandomBeer} />
+        
         <Route path="/new-beer" component={NewBeer} /> */}
         {/* for any other route (ex: /algkjafjdf) (*):   */}
         {/* <Route path="*" component={NotFound} /> */}

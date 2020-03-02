@@ -1,0 +1,6 @@
+.bigDivAboutPage {
+    width: 100vw;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+}

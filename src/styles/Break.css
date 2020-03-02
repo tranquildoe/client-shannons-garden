@@ -1,0 +1,6 @@
+.break {
+    width: 100vw;
+    height: 3vw;
+    display: flex;
+    background-color: gray;
+}

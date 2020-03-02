@@ -19,6 +19,7 @@ export default class About extends Component {
                 <Vision></Vision>
                 <img className="circlehandsImg" src="./images/aboutPage/seedsCircleHands.jpg" alt="seeds in hands in a circle"/>
                 <CoreValues></CoreValues>
+                <img className="seedPackSoil" src="./images/aboutPage/seedPackSoil.jpg" alt="seeds spilling out of seedpack onto the soil"/>
             </div>
         )
     }

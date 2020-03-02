@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class SeedBasic extends Component {
     render() {
         return (
-            <div className="pageHolder">
+            <React.Fragment>
                 <div className="topTwoRows">
                     <div className="item">Latin name</div>
                     <div className="item">Common name</div>
@@ -13,7 +13,7 @@ export default class SeedBasic extends Component {
                     <div className="item">'Mitla Black'</div>
 
                 </div>
-            </div>
+            </React.Fragment>
         )
     }
 }

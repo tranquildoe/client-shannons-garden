@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import DBImgRectText from "./userDashboard/DBImgRectText"
+import DashImgRectText from "./userDashboard/DashImgRectText"
 import BtnMySeedList from "./userDashboard/BtnMySeedList"
 import BtnMyWishList from "./userDashboard/BtnMyWishList"
 import AvatarImg from "./buildingBlocks/AvatarImg"
@@ -12,9 +12,9 @@ import "./../styles/AvatarImg.css"
 export default class MyDashboard extends Component {
     render() {
         return (
-            <div className="pageHolder">
+            <div className="bigHolderDashboard">
                 <div className="buttonAndAboutMeHolder">
-                    <DBImgRectText></DBImgRectText>
+                    <DashImgRectText></DashImgRectText>
                     <AvatarImg></AvatarImg>
                     <BtnMySeedList></BtnMySeedList>
                     <BtnMyWishList></BtnMyWishList>

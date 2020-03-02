@@ -8,7 +8,7 @@ export default class MySeedList extends Component {
         return (
             <div>
                 <ImgMySeedListTextRect></ImgMySeedListTextRect>
-                <SeedBasic>hi</SeedBasic>
+                <SeedBasic></SeedBasic>
             </div>
         )
     }

@@ -4,3 +4,9 @@
     display: flex;
     flex-direction: column;
 }
+
+.handsImg {
+    height: auto;
+    width: 100vw;
+    margin-bottom: 5vw;
+}

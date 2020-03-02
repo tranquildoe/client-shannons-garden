@@ -3,8 +3,10 @@
     border-top: 4vw solid rgb(129, 172, 117);
     margin-top: 7.5vh;
     margin-bottom: -54vh;
+    border-bottom: 3px solid darkslategray;
 }
 
 .mission {
     margin-top: 11.5vh;
+    margin-bottom: 39vw;
 }

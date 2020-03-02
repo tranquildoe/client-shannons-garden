@@ -25,6 +25,7 @@ export default class MyNavBar extends Component {
                 <NavDropdown className="navDrop" title="My Dashboard" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/myseedlist">My Seed List</NavDropdown.Item>
                     <NavDropdown.Item href="/mywishlist">My Wish List</NavDropdown.Item>
+                    <NavDropdown.Item href="/myprofile">My Profile</NavDropdown.Item>
                 </NavDropdown>
 
                 <NavDropdown className="navDrop" title="Home" id="basic-nav-dropdown">

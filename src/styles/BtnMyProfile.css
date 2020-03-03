@@ -1,3 +1,14 @@
 .profileBtn {
     margin-top: 4vw;
+    background-color: darkslategray;
+    color: white;
+    width: 50vw;
+}
+
+.profileBtn:visited {
+    color: white;
+}
+
+.profileBtn:active {
+    text-decoration: none;
 }

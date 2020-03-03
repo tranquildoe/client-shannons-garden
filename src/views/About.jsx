@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import ImgAboutTxtRect from "./ImgAboutTxtRect"
-import ImgMissionTall from "./ImgMissionTall"
-import Vision from "./Vision"
-import CoreValues from "./CoreValues"
+import ImgAboutTxtRect from "./../components/aboutPage/ImgAboutTxtRect"
+import ImgMissionTall from "./../components/aboutPage/ImgMissionTall"
+import Vision from "./../components/aboutPage/Vision"
+import CoreValues from "./../components/aboutPage/CoreValues"
 
-import "./../../styles/ImgAboutTxtRect.css"
-import "./../../styles/ImgMissionTall.css"
-import "./../../styles/Vision.css"
-import "./../../styles/CoreValues.css"
+import "./../styles/ImgAboutTxtRect.css"
+import "./../styles/ImgMissionTall.css"
+import "./../styles/Vision.css"
+import "./../styles/CoreValues.css"
 
 export default class About extends Component {
     render() {

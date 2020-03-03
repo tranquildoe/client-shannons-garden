@@ -4,7 +4,7 @@ export default class AvatarImg extends Component {
     render() {
         return (
             <div className="avatarHolder">
-                <img className="avatarImage" src="./images/defaultAvatar.png" alt="avatar"/>
+                <img className="avatarImage" src="../images/defaultAvatar.png" alt="avatar"/>
             </div>
         )
     }

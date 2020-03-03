@@ -1,3 +1,14 @@
 .myWishListBtn {
     margin-top: 4vw;
+    background-color: darkslategray;
+    color: white;
+    width: 50vw;
+}
+
+.myWishListBtn:visited {
+    color: white;
+}
+
+.myWishListBtn:active {
+    text-decoration: none;
 }

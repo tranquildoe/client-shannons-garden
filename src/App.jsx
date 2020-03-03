@@ -5,10 +5,10 @@ import "./App.css";
 
 import { Switch, Route } from "react-router-dom";
 
-import MyDashboard from "./components/userDashboard/MyDashboard"
+import MyDashboard from "./views/MyDashboard"
 import MyNavBar from "./components/navDropDownMenu/MyNavBar";
-import MySeedList from "./components/mySeedList/MySeedList";
-import About from "./components/aboutPage/About";
+import MySeedList from "./views/MySeedList";
+import About from "./views/About";
 import "./styles/MyNavBar.css";
 import "./styles/BtnMySeedList.css";
 import "./styles/About.css";
@@ -34,28 +34,35 @@ class App extends Component {
       {/* only want "exact" for home page since can have aboutsomethingelse and won't want exact there */}
       {/* link to paths in NavMain.jsx:  */}
         <Route exact path="/" 
-        // component={AllBeers}
+           // component={AllBeers}
          />
+        
+        <Route path="/about" component={About} />
+
+
+        <Route path="/mydashboard" component= {MyDashboard} />
+        <Route path="/mydashboard/:id" component= {MyDashboard} />
+       
+        <Route path="/myseedlist" component= {MySeedList} />
+        <Route path="/myseedlist/:id" component= {MySeedList} />
+
+        {/* <Route path="/mywishlist" component= {MyWishList} />
+        <Route path="/mywishlist/:id" component= {MyWishList} /> */}
+
+        {/* <Route path="/addseeds" component= {MyWishList} />
+        <Route path="/addseeds/:id" component= {MyWishList} /> */}
+
+
+        {/* <Route path="/myprofile" component= {MyProfile} />
+        <Route path="/myprofile/:id" component= {MyProfile} /> */}
         
         {/* <Route exact path="/beers" render={props => (<AllBeers {...props} allBeers={this.state.allBeers} />
         )} */}
-        <Route path="/myseedlist" component= {MySeedList} />
-        <Route path="/mydashboard" component= {MyDashboard} />
-        <Route path="/about" component={About} />
-        {/* // component={AllBeers} */}
-         {/* />
         
-        <Route path="/new-beer" component={NewBeer} /> */}
+  
         {/* for any other route (ex: /algkjafjdf) (*):   */}
         {/* <Route path="*" component={NotFound} /> */}
 
-        {/* <Route
-            exact
-            path="/beers"
-            render={props => (
-              <AllBeers {...props} allBeers={this.state.allBeers} />
-            )}
-          /> */}
 
       </Switch>
       </div>

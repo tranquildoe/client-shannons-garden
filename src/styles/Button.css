@@ -1,14 +1,13 @@
-.addSeedsBtn {
-    margin-top: 20vw;
+.button {
     background-color: darkslategray;
     color: white;
     width: 50vw;
 }
 
-.addSeedsBtn:visited {
+.button:visited {
     color: white;
 }
 
-.addSeedsBtn:active {
+.button:active {
     text-decoration: none;
 }

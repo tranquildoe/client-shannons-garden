@@ -1,4 +1,14 @@
 .mySeedListBtn {
     margin-top: 0.5vw;
-   
+    background-color: darkslategray;
+    color: white;
+    width: 50vw;
+}
+
+.mySeedListBtn:visited {
+    color: white;
+}
+
+.mySeedListBtn:active {
+    text-decoration: none;
 }

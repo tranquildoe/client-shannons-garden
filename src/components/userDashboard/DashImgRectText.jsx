@@ -3,10 +3,10 @@ import React, { Component } from 'react'
 export default class ImgRectText extends Component {
     render() {
         return (
-            <div>
-                <img className="imgInBackRect" src="./images/greenArborTunnelRect.jpg" alt=""/>
+            <React.Fragment>
+                <img className="imgInBackRect" src="../images/greenArborTunnelRect.jpg" alt=""/>
                 <div className="titleInFront">My Dashboard</div>
-            </div>
+            </React.Fragment>
         )
     }
 }

@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
-import DashImgRectText from "./DashImgRectText"
-import BtnMySeedList from "./BtnMySeedList"
-import BtnMyWishList from "./BtnMyWishList"
-import BtnMyProfile from "./BtnMyProfile"
-import AvatarImg from "./../buildingBlocks/AvatarImg"
+import DashImgRectText from "./../components/userDashboard/DashImgRectText"
+import BtnMySeedList from "./../components/userDashboard/BtnMySeedList"
+import BtnMyWishList from "./../components/userDashboard/BtnMyWishList"
+import BtnMyProfile from "./../components/userDashboard/BtnMyProfile"
+import AvatarImg from "./../components/buildingBlocks/AvatarImg"
 
 // Stylesheets
-import "./../../styles/MyDashboard.css"
-import "./../../styles/BtnMySeedList.css"
-import "./../../styles/BtnMyWishList.css"
-import "./../../styles/AvatarImg.css"
-import "./../../styles/BtnMyProfile.css"
+import "./../styles/MyDashboard.css"
+import "./../styles/BtnMySeedList.css"
+import "./../styles/BtnMyWishList.css"
+import "./../styles/AvatarImg.css"
+import "./../styles/BtnMyProfile.css"
 
 export default class MyDashboard extends Component {
     render() {

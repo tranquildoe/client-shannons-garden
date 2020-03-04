@@ -12,3 +12,4 @@ export default class AddSeedInstPage extends Component {
         )
     }
 }
+

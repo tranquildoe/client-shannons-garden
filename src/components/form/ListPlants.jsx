@@ -36,7 +36,7 @@ export default function ListPlants() {
         <Dropdown.Menu>
             {
             plants.length && plants.map((p, i) => (
-                <Dropdown.Item href="#/action-1">
+                <Dropdown.Item key={p._id} href="#/action-1">
                 {p.commonName} -  {p.latinName}
                 </Dropdown.Item>
             ))
@@ -50,3 +50,10 @@ export default function ListPlants() {
     );
 };
 
+// The best way to pick a key is to use a string that uniquely identifies a list item among its siblings. Most often you would use IDs from your data as keys:
+
+// const todoItems = todos.map((todo) =>
+//   <li key={todo.id}>
+//     {todo.text}
+//   </li>
+// );

@@ -1,86 +1,90 @@
-// Already have?:
-// bootstrap.bundle.min.js / bootstrap.bundle.js
+import React, { useState, useEffect } from "react";
+import Dropdown from "react-bootstrap/Dropdown";
+import apiHandler from "../../api/APIHandler";
 
+export default function AddSeedInstance() {
+  const [seedInstances, setSeedInstances] = useState([]);
 
-import React, { Component } from 'react'
-import Dropdown from 'react-bootstrap/Dropdown';
+  useEffect(() => {
+    apiHandler.get("/seeds").then(apiRes => {
+      console.log(apiRes.data);
+      //   setSeedInstances(apiRes.data);
+    });
 
-export default class AddSeedInstance extends Component {
-    render() {
-        return (
-            <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    Choose a Plant Type
-                </Dropdown.Toggle>
+    return () => {};
+  }, []);
 
-                <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Each Plant Here</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                </Dropdown.Menu>
-            </Dropdown>
-        )
-    }
+  return (
+    <React.Fragment>
+      <Dropdown>
+        <Dropdown.Toggle variant="success" id="dropdown-basic">
+          Choose a Plant Type
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item href="#/action-1">Each Plant Here</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+      {/* <div>
+        {data.seedInstances.commonName} - {data.seedInstances.latinName}{" "}
+      </div> */}
+    </React.Fragment>
+  );
 }
 
+// import React, { useState, useEffect } from "react";
+// // custom tools
+// import apiHandler from "../api/APIHandler";
+// import CardAlbum from "../components/card/CardAlbum";
+// import List from "../components/List";
+// import LabPreview from "../components/LabPreview";
+// // styles
+// import "../styles/card.css";
+// import "../styles/icon-favorite.css";
 
+// export default function Albums() {
+//   const [albums, setAlbums] = useState([]);
 
+//   useEffect(() => {
+//     apiHandler.get("/albums").then(apiRes => {
+//       setAlbums(apiRes.data.albums);
+//     });
 
+//     return () => {};
+//   }, []);
 
+//   return (
+//     <React.Fragment>
+//       <h1 className="title diy">D.I.Y</h1>
+//       <p>
+//         Fetch all Albums from the database.
+//         <br />
+//         Display a card for each album.
+//         <br />
+//         Provide a router {`<Link>`} to="albums/album.id",
+//         <br />
+//         leading to separate Album (details) component.
+//         <br />
+//         If the albums list is empty, provide a default view.
+//       </p>
+//       <h1 className="title diy">D.I.Y</h1>
+//       <p>
+//         Import a custom {`<IconFavorite />`} on each album card.
+//         <br />
+//         When clicked, send an axios.patch request to add the album to the
+//         user's favorites.
+//       </p>
 
+//       <LabPreview name="albums" />
 
-
-// import React, { Component } from "react";
-
-// import Navbar from "react-bootstrap/Navbar";
-// import NavDropdown from "react-bootstrap/NavDropdown";
-// import Nav from "react-bootstrap/Nav";
-// import { NavLink } from 'react-router-dom'
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
-// // import Form from "react-bootstrap/Form"
-// // import FormControl from "react-bootstrap/FormControl"
-// // import Button from "react-bootstrap/Button"
-
-
-
-
-// export default class MyNavBar extends Component {
-//   render() {
-//     return (
-//     <Navbar sticky="top" bg="dark" variant="dark" expand="lg">       
-//         <Navbar.Brand>Shannon's Garden</Navbar.Brand>
-//         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-//         <Navbar.Collapse id="basic-navbar-nav">
-//             <Nav className="mr-auto">
-//                 {/* <NavLink exact to="/home" >Home</NavLink> */}
-//                 {/* <NavLink to="/random-beer" >Random Beer</NavLink>
-//                 <NavLink to="/new-beer" >New Beer</NavLink> */}
-//                 {/* Want the dropdown title to be a navLink as well:  */}
-//                 <NavDropdown className="navDrop" title="My Links" id="basic-nav-dropdown">
-//                     <NavDropdown.Item href="/mydashboard">My Dashboard</NavDropdown.Item>
-//                     <NavDropdown.Item href="/myseedlist">My Seed List</NavDropdown.Item>
-//                     <NavDropdown.Item href="/mywishlist">My Wish List</NavDropdown.Item>
-//                     <NavDropdown.Item href="/myprofile">My Profile</NavDropdown.Item>
-//                 </NavDropdown>
-
-//                 <NavDropdown className="navDrop" title="Main" id="basic-nav-dropdown">
-
-//                 {/* add an anchor to the search on the start page:  */}
-//                     <NavDropdown.Item href="/">Home</NavDropdown.Item>
-//                     <NavDropdown.Item href="/">Search</NavDropdown.Item>
-//                     <NavDropdown.Item href="/about">About</NavDropdown.Item>
-//                 </NavDropdown>
-
-//                 <NavLink className="navLink" to="/logout" >Logout</NavLink>
-
-//             </Nav>
-//                   {/* <Form inline>
-//                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-//                     <Button variant="outline-success">Search</Button>
-//                   </Form> */}
-//         </Navbar.Collapse>
-//     </Navbar>
-//     );
-//   }
+//       <hr />
+//       <h1 className="title">All albums</h1>
+//       <List
+//         data={albums}
+//         Component={CardAlbum}
+//         cssList="cards"
+//         cssItem="card album"
+//       />
+//     </React.Fragment>
+//   );
 // }

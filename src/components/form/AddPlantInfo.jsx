@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import apiHandler from "./../api/APIHandler";
-// import AddSeedInstance from "./../components/form/AddSeedInstance"
 
 
-// <AddSeedInstance></AddSeedInstance>
+//  to modify:
+
+
 const AddSeeds = () => {
   const [{ latinName, commonName, variety}, setState] = useState({ latinName: "", commonName: "", variety: "" });
 

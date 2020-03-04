@@ -8,7 +8,8 @@ import { Switch, Route } from "react-router-dom";
 import MyDashboard from "./views/MyDashboard"
 import MyNavBar from "./components/navDropDownMenu/MyNavBar";
 import MySeedList from "./views/MySeedList";
-import AddSeeds from "./views/AddSeeds";
+// import AddSeeds from "./views/AddSeeds";
+import AddSeedInstPage from "./views/AddSeedInstPage"
 import About from "./views/About";
 import "./styles/MyNavBar.css";
 import "./styles/BtnMySeedList.css";
@@ -50,7 +51,7 @@ class App extends Component {
         {/* <Route path="/mywishlist" component= {MyWishList} />
         <Route path="/mywishlist/:id" component= {MyWishList} /> */}
 
-        <Route path="/addseeds" component= {AddSeeds} />
+        <Route path="/addseeds" component= {AddSeedInstPage} />
         {/* <Route path="/addseeds/:id" component= {MyWishList} /> */}
 
 

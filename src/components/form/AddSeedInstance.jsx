@@ -5,14 +5,24 @@ import apiHandler from "../../api/APIHandler";
 export default function AddSeedInstance() {
   const [seedInstances, setSeedInstances] = useState([]);
 
-  useEffect(() => {
-    apiHandler.get("/seeds").then(apiRes => {
-      console.log(apiRes.data);
-      //   setSeedInstances(apiRes.data);
-    });
+useEffect(() => {
+  apiHandler.get("/seeds").then(apiRes => {
+    console.log(apiRes.data);
+    console.log(apiRes.data.seedInstances[0].plantId.commonName)
+    let seedInsts = apiRes.data.seedInstances;
+    console.log(seedInsts);
+    console.log("name", apiRes.data.seedInstances[0].plantId.commonName)
 
-    return () => {};
-  }, []);
+  apiRes.data.seedInstances.map((s, i) => (
+    console.log("common name here", apiRes.data.seedInstances[i].plantId.commonName),
+    console.log("latin name here", apiRes.data.seedInstances[i].plantId.latinName),
+    console.log(<Dropdown.Item key={i}>`{apiRes.data.seedInstances[i].plantId.commonName}`</Dropdown.Item>)
+  ))
+  // here append the nodes inside 
+  // Look up the add nodes syntax, add element, etc., create new node, append new nodes
+  var plantNodes = 0;
+
+})})
 
   return (
     <React.Fragment>
@@ -30,61 +40,5 @@ export default function AddSeedInstance() {
       </div> */}
     </React.Fragment>
   );
+
 }
-
-// import React, { useState, useEffect } from "react";
-// // custom tools
-// import apiHandler from "../api/APIHandler";
-// import CardAlbum from "../components/card/CardAlbum";
-// import List from "../components/List";
-// import LabPreview from "../components/LabPreview";
-// // styles
-// import "../styles/card.css";
-// import "../styles/icon-favorite.css";
-
-// export default function Albums() {
-//   const [albums, setAlbums] = useState([]);
-
-//   useEffect(() => {
-//     apiHandler.get("/albums").then(apiRes => {
-//       setAlbums(apiRes.data.albums);
-//     });
-
-//     return () => {};
-//   }, []);
-
-//   return (
-//     <React.Fragment>
-//       <h1 className="title diy">D.I.Y</h1>
-//       <p>
-//         Fetch all Albums from the database.
-//         <br />
-//         Display a card for each album.
-//         <br />
-//         Provide a router {`<Link>`} to="albums/album.id",
-//         <br />
-//         leading to separate Album (details) component.
-//         <br />
-//         If the albums list is empty, provide a default view.
-//       </p>
-//       <h1 className="title diy">D.I.Y</h1>
-//       <p>
-//         Import a custom {`<IconFavorite />`} on each album card.
-//         <br />
-//         When clicked, send an axios.patch request to add the album to the
-//         user's favorites.
-//       </p>
-
-//       <LabPreview name="albums" />
-
-//       <hr />
-//       <h1 className="title">All albums</h1>
-//       <List
-//         data={albums}
-//         Component={CardAlbum}
-//         cssList="cards"
-//         cssItem="card album"
-//       />
-//     </React.Fragment>
-//   );
-// }

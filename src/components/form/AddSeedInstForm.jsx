@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { useForm } from "./../../hooks/useForm";
 import APIHandler from "./../../api/APIHandler";
-import {withRouter} from "react-router-dom";
-
+import { withRouter } from "react-router-dom";
+import { UserContext } from "./../../auth/UserContext";
 
 // don't need handleChange here
 // when returning an object- destructure the obj when calling the custom hook (lines 8-9):
 // once you call useForm, you don't have to handleChange again
-const AddSeedInstForm = ({plantId, history}) => {
+const AddSeedInstForm = ({ plantId, history }) => {
+  const { currentUser } = useContext(UserContext);
   const { formValues, getInputProps, handleChange } = useForm();
 
   // here, you don't put in custom hook with handleSubmit, b/c every form action is different (only handleChange) - won't have the reusability
@@ -17,17 +18,13 @@ const AddSeedInstForm = ({plantId, history}) => {
 
     formValues.plantId = plantId;
 
-    APIHandler
-      .post('/seeds', formValues)
-      .then(() => history.push("/myseedlist"))
-      .catch((apiErr) => console.error(apiErr))
+    APIHandler.post("/seeds", formValues)
+      .then(() => history.push(`/user/${currentUser._id}/seedlist`))
+      .catch(apiErr => console.error(apiErr));
   };
-
 
   return (
     <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
-
-
       <div className="form__group">
         <label htmlFor="variety">Variety</label>
         <input
@@ -46,7 +43,6 @@ const AddSeedInstForm = ({plantId, history}) => {
           className="form__input"
           id="forTrade"
           type="checkbox"
-
           {...getInputProps("forTrade")}
         />
       </div>
@@ -58,7 +54,6 @@ const AddSeedInstForm = ({plantId, history}) => {
           className="form__input"
           id="isOpenPollinated"
           type="checkbox"
-
           {...getInputProps("isOpenPollinated")}
         />
       </div>
@@ -70,7 +65,6 @@ const AddSeedInstForm = ({plantId, history}) => {
           className="form__input"
           id="isHeirloom"
           type="checkbox"
-
           {...getInputProps("isHeirloom")}
         />
       </div>
@@ -82,7 +76,6 @@ const AddSeedInstForm = ({plantId, history}) => {
           className="form__input"
           id="isHybrid"
           type="checkbox"
-
           {...getInputProps("isHybrid")}
         />
       </div>
@@ -94,7 +87,6 @@ const AddSeedInstForm = ({plantId, history}) => {
           className="form__input"
           id="isMedicinal"
           type="checkbox"
-
           {...getInputProps("isMedicinal")}
         />
       </div>
@@ -106,21 +98,22 @@ const AddSeedInstForm = ({plantId, history}) => {
           className="form__input"
           id="isEdible"
           type="checkbox"
-
           {...getInputProps("isEdible")}
         />
       </div>
 
-      {formValues.isEdible && <div className="form__group">
-        <label htmlFor="edibleParts">Edible parts:</label>
-        <input
-          autoComplete="off"
-          className="form__input"
-          id="edibleParts"
-          type="text"
-          {...getInputProps("edibleParts")}
-        />
-      </div>}
+      {formValues.isEdible && (
+        <div className="form__group">
+          <label htmlFor="edibleParts">Edible parts:</label>
+          <input
+            autoComplete="off"
+            className="form__input"
+            id="edibleParts"
+            type="text"
+            {...getInputProps("edibleParts")}
+          />
+        </div>
+      )}
 
       <div className="form__group">
         <label htmlFor="myNotes">My Notes</label>
@@ -135,7 +128,7 @@ const AddSeedInstForm = ({plantId, history}) => {
           // to get the key: val pairs as attributes, you spread the obj into the input
           {...getInputProps("myNotes")}
         />
-        </div>
+      </div>
 
       <button className="btn is-success">Submit</button>
     </form>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-
+import Form from "./components/form/Form"
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Switch, Route } from "react-router-dom";
@@ -53,6 +53,8 @@ class App extends Component {
 
         <Route path="/addseeds" component= {AddSeedInstPage} />
         {/* <Route path="/addseeds/:id" component= {MyWishList} /> */}
+
+        <Route path="/form" component={Form} />
 
 
         {/* <Route path="/myprofile" component= {MyProfile} />

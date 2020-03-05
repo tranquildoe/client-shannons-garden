@@ -40,14 +40,14 @@ const AddSeedInstForm = ({plantId, history}) => {
       </div>
 
       <div className="form__group">
-        <label htmlFor="iFforTrade">To Trade:</label>
+        <label htmlFor="forTrade">To Trade:</label>
         <input
           autoComplete="off"
           className="form__input"
-          id="isForTrade"
+          id="forTrade"
           type="checkbox"
 
-          {...getInputProps("isForTrade")}
+          {...getInputProps("forTrade")}
         />
       </div>
 

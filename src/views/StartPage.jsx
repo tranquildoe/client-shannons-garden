@@ -13,7 +13,7 @@ export default function StartPage() {
         clbk={() => setOnlyForTrade(!isForTrade)}
         status={isForTrade}
       />
-      <SeedBasic isForTrade={isForTrade} isEditable={false} />
+      <SeedBasic isForTrade={isForTrade} isEditable={false} hasAvatar={true} />
     </div>
   );
 }

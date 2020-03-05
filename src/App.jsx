@@ -9,6 +9,7 @@ import SigninPage from "./views/SigninPage";
 import SignupPage from "./views/SignupPage";
 import MyNavBar from "./components/navDropDownMenu/MyNavBar";
 import MySeedList from "./views/MySeedList";
+import MyWishList from "./views/MyWishList";
 import AddSeedInstPage from "./views/AddSeedInstPage";
 import About from "./views/About";
 import { ProtectedRoute } from "./auth/ProtectedRoute";
@@ -34,13 +35,13 @@ class App extends Component {
 
             <Route path="/about" component={About} />
 
-            <ProtectedRoute exact path="/mydashboard" component={MyDashboard} />
-            <ProtectedRoute exact path="/mydashboard" component={MyDashboard} />
-            <ProtectedRoute exact path="/myseedlist" component={MySeedList} />
+            <ProtectedRoute exact path="/user/:userID/dashboard" component={MyDashboard} />
+            <ProtectedRoute exact path="/user/:userID/wishlist" component={MyWishList} />
+            <ProtectedRoute exact path="/user/:userID/seedlist" component={MySeedList} />
+            <ProtectedRoute exact path="/user/:userID/seedlist/add" component={AddSeedInstPage} />
 
             <Route path="/signin" component={SigninPage} />
             <Route path="/signup" component={SignupPage} />
-
 
           </Switch>
         </div>

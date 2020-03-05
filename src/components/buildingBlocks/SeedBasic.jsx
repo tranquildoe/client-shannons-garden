@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import apiHandler from "./../../api/APIHandler";
+import AvatarImg from "./AvatarImg";
+import {withRouter} from "react-router-dom";
 
-export default function SeedBasic({ isEditable, isForTrade }) {
+export default withRouter(function SeedBasic({ isEditable, isForTrade, match, hasAvatar = false}) {
   const [mySeeds, setMySeeds] = useState([]);
 
   useEffect(() => {
+ 
+    const url = "/seeds/" + (match.params.userID ? match.params.userID  : "");
     apiHandler
-      .get("/seeds", { isForTrade })
+      .get(url, { isForTrade })
       .then(apiRes => {
-        console.log(apiRes);
         setMySeeds(apiRes.data.seedInstances);
       })
       .catch(apiErr => console.error(apiErr));
@@ -54,7 +57,7 @@ export default function SeedBasic({ isEditable, isForTrade }) {
             <div className="item">{oneSeed.variety}</div>
           </div>
           <div className="infos">
-            <div className="avatar"></div>
+            {hasAvatar && <AvatarImg src={oneSeed.userID.avatarUrl}/>}
             <div>
               <div className="notes">
                 <p className="text">
@@ -118,4 +121,4 @@ export default function SeedBasic({ isEditable, isForTrade }) {
       ))}
     </>
   );
-}
+});

@@ -18,7 +18,7 @@ export default function SigninPage({ history }) {
       .post("/signin", formValues)
       .then(({ data }) => {
         setCurrentUser(data.currentUser);
-        history.push("/mydashboard");
+        history.push("/user/" + data.currentUser._id + "/dashboard");
       })
       .catch(apiErr => {
         console.error(apiErr);

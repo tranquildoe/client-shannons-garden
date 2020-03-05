@@ -15,7 +15,6 @@ import "./../styles/BtnMyProfile.css";
 
 export default function MyDashboard() {
   const { currentUser } = useContext(UserContext);
-  console.log(currentUser);
   
   return (
     <div className="bigHolderDashboard">

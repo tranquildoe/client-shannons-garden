@@ -1,12 +1,18 @@
-import React, { Component } from 'react'
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { UserContext } from "./../../auth/UserContext";
 
-export default class Button extends Component {
-    render() {
-        return (
-            <React.Fragment>
-                {/* <button className="stndrdBtn addSeedsBtn">+ Add Seeds</button> */}
-                <a className="button addSeedsBtn" href="http://localhost:3000/addseeds">+ Add Seeds</a>
-            </React.Fragment>
-        )
-    }
+export default function Button() {
+  const { currentUser } = useContext(UserContext);
+  if (!currentUser) return null;
+  return (
+    <React.Fragment>
+      <Link
+        className="button mySeedListBtn"
+        to={`/user/${currentUser._id}/seedlist/add`}
+      >
+        Add Seed
+      </Link>
+    </React.Fragment>
+  );
 }

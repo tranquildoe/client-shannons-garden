@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SeedBasic from "./../components/buildingBlocks/SeedBasic";
-import IsForTradeButton from "./../components/button/IsForTradeButton";
+import IsForTradeButton from "../components/buildingBlocks/IsForTradeButton";
 
 
 export default function StartPage() {

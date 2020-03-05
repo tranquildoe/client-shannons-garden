@@ -19,8 +19,8 @@ const AddSeedInstForm = ({plantId, history}) => {
 
     APIHandler
       .post('/seeds', formValues)
-      .then((apiRes) => history.push("/myseedlist"))
-      .catch((apiErr) => console.error('aww naww', apiErr))
+      .then(() => history.push("/myseedlist"))
+      .catch((apiErr) => console.error(apiErr))
   };
 
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ImgMySeedListTextRect from "./../components/mySeedList/ImgMySeedListTextRect";
 import SeedBasic from "./../components/buildingBlocks/SeedBasic";
 import AddSeedsBtn from "./../components/mySeedList/AddSeedsBtn";
-import IsForTradeButton from "./../components/button/IsForTradeButton";
+import IsForTradeButton from "../components/buildingBlocks/IsForTradeButton";
 
 // Stylesheets
 import "./../styles/SeedBasic.css";

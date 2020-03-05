@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
-import { useAuth } from "./useAuth";
+import { UserContext } from "./../auth/UserContext";
 
 /* 
 @mdn : A function's last parameter can be prefixed with "..."
@@ -9,11 +9,10 @@ Only the last parameter can be a "rest parameter".
 */
 // line below : use of the rest parameter
 export const ProtectedRoute = ({ component: Component, ...rest }) => {
-  const { isLoggedIn, isLoading } = useAuth();
+  const { isLoading, isLoggedIn } = useContext(UserContext);
   // return default template while performing async auth task
   if (isLoading) return <div>Loading...</div>;
   return isLoggedIn ? (
-    
     // if logged in, return a regular Route component
     // this Route gets any passed (...rested) props in a literal object
     <Route {...rest} render={props => <Component {...props} />} />

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import apiHandler from "./../api/APIHandler";
 import AvatarWidget from "./../components/buildingBlocks/AvatarWidget";
 
-export default function SignupPage() {
+export default function SignupPage({history}) {
   const { formValues, getInputProps, handleChange } = useForm({
     name: "foo",
     username: "FooBarBaz",
@@ -15,18 +15,25 @@ export default function SignupPage() {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    console.log(formValues);
+
+    const fd = new FormData();
+
+    for (let prop in formValues) {
+      fd.append(prop, formValues[prop]);
+    }
 
     apiHandler
-      .post("/signup", formValues)
+      .post("/signup", fd)
       .then(apiRes => {
         console.error(apiRes);
+        history.push("/signin")
       })
       .catch(apiErr => {
         console.error(apiErr);
       });
   };
 
+  console.log(formValues);
   return (
     <div>
       <h1 className="title">Sign up</h1>
@@ -91,7 +98,7 @@ export default function SignupPage() {
 
         <AvatarWidget
           clbk={(evt, file, base64Str) => {
-            // console.log(evt.target, file, base64Str);
+            console.log(evt.target.name, file, base64Str);
             handleChange(evt);
           }}
         />

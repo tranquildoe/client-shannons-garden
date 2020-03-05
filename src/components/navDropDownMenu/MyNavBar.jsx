@@ -1,11 +1,21 @@
 import React, { Component } from "react";
-
+import { withRouter } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Nav from "react-bootstrap/Nav";
+import apiHandler from "./../../api/APIHandler";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default class MyNavBar extends Component {
+class MyNavBar extends Component {
+  handleSignout = e => {
+    apiHandler
+      .post("/signout")
+      .then(apiRes => {
+        this.props.history.push("/signin")
+      })
+      .catch(apiErr => console.error(apiErr));
+  };
+
   render() {
     return (
       <Navbar sticky="top" bg="dark" variant="dark" expand="lg">
@@ -40,7 +50,9 @@ export default class MyNavBar extends Component {
               <NavDropdown.Item href="/mydashboard">
                 My Profile
               </NavDropdown.Item>
-              <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
+              <NavDropdown.Item onClick={this.handleSignout}>
+                Logout
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
@@ -48,3 +60,5 @@ export default class MyNavBar extends Component {
     );
   }
 }
+
+export default withRouter(MyNavBar);

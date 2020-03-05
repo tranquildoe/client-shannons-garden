@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { useForm } from "./../hooks/useForm";
 import { Link } from "react-router-dom";
 import apiHandler from "./../api/APIHandler";
+import { UserContext } from "./../auth/UserContext";
 
-export default function SigninPage() {
+export default function SigninPage({ history }) {
+  const { setCurrentUser } = useContext(UserContext);
   const { formValues, getInputProps, handleChange } = useForm({
     email: "test@foo.com",
     password: "12345"
@@ -11,12 +13,12 @@ export default function SigninPage() {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    console.log(formValues);
 
     apiHandler
       .post("/signin", formValues)
-      .then(apiRes => {
-        console.error(apiRes);
+      .then(({ data }) => {
+        setCurrentUser(data.currentUser);
+        history.push("/mydashboard");
       })
       .catch(apiErr => {
         console.error(apiErr);
@@ -37,6 +39,7 @@ export default function SigninPage() {
             autoComplete="off"
             className="form__input"
             id="email"
+            name="email"
             type="email"
             {...getInputProps("email")}
           />
@@ -48,6 +51,7 @@ export default function SigninPage() {
             autoComplete="off"
             className="form__input"
             id="password"
+            name="password"
             type="password"
             {...getInputProps("password")}
           />

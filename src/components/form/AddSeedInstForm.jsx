@@ -1,5 +1,5 @@
 import React from "react";
-import "./../../styles/Form.scss";
+
 import { useForm } from "./../../hooks/useForm";
 import APIHandler from "./../../api/APIHandler";
 import {withRouter} from "react-router-dom";

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import AddSeeds from "./../views/AddSeeds"
+// import AddSeeds from "./../views/AddSeeds"
 import ListPlants from "./../components/form/ListPlants"
 import AddSeedInstForm from "./../components/form/AddSeedInstForm"
 import apiHandler from "./../api/APIHandler";

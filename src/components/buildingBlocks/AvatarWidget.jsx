@@ -25,14 +25,15 @@ export default function IconAvatar({ clbk }) {
 
   return (
     <div
-      className={"is-clickable icon-avatar"}
+      className={"is-clickable dd icon-avatar"}
       title="change avatar"
-      style={{ backgroundImage: avatar }}
+      style={{ background: `url(${avatar}` }}
     >
       <input
         ref={fileInput}
         type="file"
         className="is-hidden"
+        name="avatar"
         onChange={handleAvatar}
       />
       <FontAwesomeIcon

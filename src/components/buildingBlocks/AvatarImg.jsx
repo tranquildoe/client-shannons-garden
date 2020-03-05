@@ -1,11 +1,7 @@
-import React, { Component } from 'react'
+import React from "react";
 
-export default class AvatarImg extends Component {
-    render() {
-        return (
-            <div className="avatarHolder">
-                <img className="avatarImage" src="../images/defaultAvatar.png" alt="avatar"/>
-            </div>
-        )
-    }
+export default function AvatarImg({ src }) {
+  return (
+    <div className="avatarHolder" style={{background:  `url('${src}')`}} />
+  );
 }

@@ -13,13 +13,15 @@ export function useForm(initialValues = {}) {
     let value =
       event.target.type === "checkbox"
         ? event.target.checked
+        : event.target.type === "file"
+        ? event.target.files[0]
         : event.target.value;
     setFormValues({
       ...formValues,
       [event.target.name]: value
     });
   }
-// getInputProps here goes to line 35 of Form.jsx
+  // getInputProps here goes to line 35 of Form.jsx
   function getInputProps(fieldName) {
     return {
       name: fieldName,
@@ -28,8 +30,8 @@ export function useForm(initialValues = {}) {
       onChange: handleChange
     };
   }
-// returning state:
-// below is what you return from your hook:
+  // returning state:
+  // below is what you return from your hook:
   return {
     formValues,
     getInputProps,

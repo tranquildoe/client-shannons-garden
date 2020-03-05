@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import Form from "./components/form/Form";
-
+import UserContext from "./auth/UserContext";
 import { Switch, Route } from "react-router-dom";
 
 import StartPage from "./views/StartPage";
@@ -14,6 +13,7 @@ import AddSeedInstPage from "./views/AddSeedInstPage";
 import About from "./views/About";
 import { ProtectedRoute } from "./auth/ProtectedRoute";
 
+import "./styles/Form.scss";
 import "./styles/MyNavBar.css";
 import "./styles/BtnMySeedList.css";
 import "./styles/About.css";
@@ -21,33 +21,30 @@ import "./styles/About.css";
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        {/* <div>hi</div> */}
-        <MyNavBar></MyNavBar>
-        {/* <img className="picture" src="./images/bottleCaps.jpg" alt="beer bottlecaps"/> */}
+      <UserContext>
+        <div className="App">
+          {/* <div>hi</div> */}
+          <MyNavBar />
+          {/* <img className="picture" src="./images/bottleCaps.jpg" alt="beer bottlecaps"/> */}
 
-        <Switch>
-          {/* only want "exact" for home page since can have aboutsomethingelse and won't want exact there */}
-          {/* link to paths in NavMain.jsx:  */}
-          <Route exact path="/" component={StartPage} />
+          <Switch>
+            {/* only want "exact" for home page since can have aboutsomethingelse and won't want exact there */}
+            {/* link to paths in NavMain.jsx:  */}
+            <Route exact path="/" component={StartPage} />
 
-          <Route path="/about" component={About} />
-          
-          <Route path="/myseedlist" component={MySeedList} />
+            <Route path="/about" component={About} />
 
-          <ProtectedRoute
-            exact
-            path="/mydashboard"
-            component={MyDashboard}
-          />
+            <ProtectedRoute exact path="/mydashboard" component={MyDashboard} />
+            <ProtectedRoute exact path="/mydashboard" component={MyDashboard} />
+            <ProtectedRoute exact path="/myseedlist" component={MySeedList} />
 
-          <Route path="/addseeds" component={AddSeedInstPage} />
-          <Route path="/signin" component={SigninPage} />
-          <Route path="/signup" component={SignupPage} />
+            <Route path="/signin" component={SigninPage} />
+            <Route path="/signup" component={SignupPage} />
 
-          <Route path="/form" component={Form} />
-        </Switch>
-      </div>
+
+          </Switch>
+        </div>
+      </UserContext>
     );
   }
 }

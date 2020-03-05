@@ -1,20 +1,52 @@
 .topTwoRows {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(2, 15vw);
-    /* grid-gap: 10px; */
-    margin-top: 8vw;
-    border: 1px solid darkslategray;
-    min-width: 60vw;
-    max-width: 80vw;
-  }
-
-.item {
-    border: 1px solid darkslategray;
-    padding: 2vw;
-    width: 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 42px 42px 1fr;
+  /* grid-gap: 10px; */
+  margin-top: 40px;
+  border: 1px solid darkslategray;
+  width: 80vw;
 }
 
-/* div {
-    display: grid;
-} */
+.topTwoRows .labels,
+.topTwoRows .names {
+  grid-column: 1 / 4;
+  display: flex;
+}
+
+.topTwoRows .labels .item,
+.topTwoRows .names .item {
+  border: 1px solid darkslategray;
+  padding: 5px;
+  flex: 1;
+}
+
+.topTwoRows .infos {
+  grid-column: 1 / 4;
+}
+
+.topTwoRows .infos .notes {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.topTwoRows .infos .notes .text {
+  padding: 3px 10px;
+  margin-bottom: 0;
+}
+
+.topTwoRows .infos .checkboxes {
+  border-top: 1px solid;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 7px;
+}
+
+.topTwoRows .infos .checkboxes label {
+  margin-right: 3px;
+  margin-bottom: 0;
+}
+.topTwoRows .infos .checkboxes input {
+  margin-right: 20px;
+}

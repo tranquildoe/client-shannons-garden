@@ -5,7 +5,8 @@ import Form from "./components/form/Form"
 
 import { Switch, Route } from "react-router-dom";
 
-import MyDashboard from "./views/MyDashboard"
+import StartPage from "./views/StartPage";
+import MyDashboard from "./views/MyDashboard";
 import MyNavBar from "./components/navDropDownMenu/MyNavBar";
 import MySeedList from "./views/MySeedList";
 // import AddSeeds from "./views/AddSeeds";
@@ -36,7 +37,7 @@ class App extends Component {
       {/* only want "exact" for home page since can have aboutsomethingelse and won't want exact there */}
       {/* link to paths in NavMain.jsx:  */}
         <Route exact path="/" 
-           // component={AllBeers}
+           component={StartPage}
          />
         
         <Route path="/about" component={About} />

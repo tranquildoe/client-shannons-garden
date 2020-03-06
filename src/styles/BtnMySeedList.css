@@ -3,6 +3,8 @@
     background-color: darkslategray;
     color: white;
     width: 50vw;
+    margin-bottom: 28px;
+
 }
 
 .mySeedListBtn:visited {

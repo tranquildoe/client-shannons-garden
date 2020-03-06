@@ -8,6 +8,7 @@ import IsForTradeButton from "../components/buildingBlocks/IsForTradeButton";
 import "./../styles/SeedBasic.css";
 import "./../styles/AddSeedsBtn.css";
 import "./../styles/MySeedList.css";
+import "./../styles/ImgMySeedListTextRect.css"
 
 export default function MySeedList() {
   const [isForTrade, setOnlyForTrade] = useState(false);

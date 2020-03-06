@@ -30,7 +30,6 @@ function MyNavBar({ history }) {
             <NavDropdown.Item href="/">Home</NavDropdown.Item>
             <NavDropdown.Item href="/about">About</NavDropdown.Item>
             <NavDropdown.Item href="/signin">Sign in</NavDropdown.Item>
-            <NavDropdown.Item href="/signup">Sign up</NavDropdown.Item>
 
           </NavDropdown>
 

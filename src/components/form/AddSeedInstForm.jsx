@@ -130,7 +130,7 @@ const AddSeedInstForm = ({ plantId, history }) => {
         />
       </div>
 
-      <button className="btn is-success">Submit</button>
+      <button className="btn is-success submitBtn">Submit</button>
     </form>
   );
 };

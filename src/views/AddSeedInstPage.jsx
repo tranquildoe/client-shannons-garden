@@ -4,6 +4,7 @@ import ListPlants from "./../components/form/ListPlants"
 import AddSeedInstForm from "./../components/form/AddSeedInstForm"
 import apiHandler from "./../api/APIHandler";
 
+import "./../styles/AddSeedInstForm.css"
 
 export default function AddSeedInstPage() {
 

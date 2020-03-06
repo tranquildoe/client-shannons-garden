@@ -8,6 +8,7 @@ import "./../styles/ImgAboutTxtRect.css"
 import "./../styles/ImgMissionTall.css"
 import "./../styles/Vision.css"
 import "./../styles/CoreValues.css"
+import "./../styles/About.css"
 
 export default class About extends Component {
     render() {

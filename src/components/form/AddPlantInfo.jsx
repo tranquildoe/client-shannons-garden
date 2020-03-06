@@ -18,6 +18,7 @@ const AddSeeds = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
+   
     apiHandler.post("/seeds", {
         latinName, commonName, variety
     })

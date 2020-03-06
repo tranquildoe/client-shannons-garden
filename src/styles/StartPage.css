@@ -1,0 +1,11 @@
+.logo {
+    width: 30vw;
+    margin-top: 50px;
+    margin-bottom: 45px;
+}
+
+.logoAndButtonHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

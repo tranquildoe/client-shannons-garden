@@ -5,6 +5,7 @@ import BtnMyWishList from "./../components/userDashboard/BtnMyWishList";
 import BtnMyProfile from "./../components/userDashboard/BtnMyProfile";
 import AvatarImg from "./../components/buildingBlocks/AvatarImg";
 import { UserContext } from "./../auth/UserContext";
+import Button from "./../components/buildingBlocks/Button"
 
 // Stylesheets
 import "./../styles/MyDashboard.css";

@@ -29,6 +29,8 @@ function MyNavBar({ history }) {
             {/* add an anchor to the search on the start page:  */}
             <NavDropdown.Item href="/">Home</NavDropdown.Item>
             <NavDropdown.Item href="/about">About</NavDropdown.Item>
+            <NavDropdown.Item href="/signin">Sign in</NavDropdown.Item>
+
           </NavDropdown>
 
           {currentUser && (
